@@ -2,6 +2,7 @@ package com.moviles.starwars;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.JsonReader;
@@ -133,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
         JSONObject obj = new JSONObject(s);
         JSONArray arr = obj.getJSONArray("results");
         if(t.equals("people")){
+            pe.clear();
             for(int i = 0; i < arr.length(); i++) {
                 String name = arr.getJSONObject(i).getString("name");
                 String height = arr.getJSONObject(i).getString("height");
@@ -148,7 +150,12 @@ public class MainActivity extends AppCompatActivity {
                 pe.add(people);
             }
 
+            Intent intent = new Intent(MainActivity.this,PeopleActivity.class);
+            intent.putExtra("people",pe);
+            startActivity(intent);
+
             }else{
+            pl.clear();
             for(int i = 0; i < arr.length(); i++) {
                 String name = arr.getJSONObject(i).getString("name");
                 String rotation_period = arr.getJSONObject(i).getString("rotation_period");
@@ -165,6 +172,12 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println(planets.getName());
 
             }
+
+
+
+            Intent intent = new Intent(MainActivity.this,PlanetsActivity.class);
+            intent.putExtra("planets",pl);
+            startActivity(intent);
 
         }
     }
