@@ -23,7 +23,7 @@ public class PeopleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_people);
 
          name = findViewById(R.id.text_name);
-         height= findViewById(R.id.text_height);
+         height= findViewById(R.id.text_rotation_period);
          mass= findViewById(R.id.text_mass);
          hair_color= findViewById(R.id.text_hair_color);
          skin_color= findViewById(R.id.text_skin_color);
