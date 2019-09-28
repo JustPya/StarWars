@@ -1,6 +1,8 @@
 package com.moviles.starwars;
 
-public class People {
+import java.io.Serializable;
+
+public class People implements Serializable {
 
     	private String name;
     	private String height;

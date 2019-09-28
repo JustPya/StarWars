@@ -1,6 +1,8 @@
 package com.moviles.starwars;
 
-public class Planets {
+import java.io.Serializable;
+
+public class Planets implements Serializable {
 
     private String name;
     private String rotation_period;
